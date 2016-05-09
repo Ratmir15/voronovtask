@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Add Client Wizard</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/wizard.css">
+  <link rel="stylesheet" href="styles/notification.css">
+</head>
+<body>
+
+<div id="wizard" class="wizard"></div>
+
+<!-- Templates -->
+<script id="add-client-info" type="text/template">
+  <form class="wizard-form" action="#">
+    <div class="wizard-form-element">
+      <label>First Name</label>
+      <input type="text" required="required" name="firstname" id="fname" value="" autofocus/>
+    </div>
+    <div class="wizard-form-element">
+      <label>Last Name</label>
+      <input type="text" name="lastname" required="required" id="lname" value="" autofocus/>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="nextpage">Next</button>
+  </form>
+</script>
+
+<script id="add-address-info" type="text/template">
+  <form class="wizard-form" action="#">
+    <div class="wizard-form-element">
+      <label>AddressOne</label>
+      <input type="text" required="required" name="address1" id="addOne" autofocus/>
+    </div>
+    <div class="wizard-form-element">
+      <label>AddressTwo</label>
+      <input type="text" name="address2" id="addTwo" autofocus/>
+    </div>
+    <div class="wizard-form-element">
+      <label>City</label>
+      <input type="text" name="city" id="city" autofocus/>
+    </div>
+    <div class="wizard-form-element">
+      <label>State</label>
+      <input type="text" name="state" id="state" autofocus/>
+    </div>
+    <div class="wizard-form-element">
+      <label>ZipCode</label>
+      <input type="number" name="zipcode" id="zipcode" autofocus/>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" id="complete">Finish</button>
+    </div>
+  </form>
+</script>
+
+<!-- Libraries -->
+<script src="node_modules/es6-promise/dist/es6-promise.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/underscore/underscore-min.js"></script>
+<script src="node_modules/backbone/backbone-min.js"></script>
+
+<!-- Our code -->
+<script src="client/clientAddressInfoView.js"></script>
+<script src="client/clientInfoView.js"></script>
+<script src="client/ClientModel.js"></script>
+<script src="mediator.js"></script>
+<script src="init.js"></script>
+
+</body>
+</html>
